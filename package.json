@@ -17,6 +17,10 @@
   },
   "homepage": "https://github.com/NHJAX/nmrtc-jax-wx-pub-sub#readme",
   "dependencies": {
-    "async-mqtt": "^2.2.1"
+    "express": "^4.16.4",
+    "lodash": "^4.17.11",
+    "mosca": "^2.8.3",
+    "mqtt": "^2.18.8",
+    "socket.io": "^2.2.0"
   }
 }
