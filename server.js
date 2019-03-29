@@ -1,27 +1,23 @@
-var mosca = require('mosca')
+const MQTT = require("async-mqtt");
 
-var pubsubsettings = {
-  type: 'mqtt',
-  json: false,
-  mqtt: require('mqtt'),
-  host: '127.0.0.1',
-  port: 1883
-};
+const client = MQTT.connect("tcp://somehost.com:1883");
 
-var moscaSettings = {
-  port: 1883,			//mosca (mqtt) port
-  backend: pubsubsettings	//pubsubsettings is the object we created above
+// When passing async functions as event listeners, make sure to have a try catch block
 
-};
+const doStuff = async () => {
 
-var server = new mosca.Server(moscaSettings);	//here we start mosca
-server.on('ready', setup);	//on init it fires up setup()
-
-// fired when the mqtt server is ready
-function setup() {
-  console.log('Mosca server is up and running')
+    console.log("Starting");
+    try {
+        await client.publish("wow/so/cool", "It works!");
+        // This line doesn't run until the server responds to the publish
+        await client.end();
+        // This line doesn't run until the client has disconnected without error
+        console.log("Done");
+    } catch (e){
+        // Do something about it!
+        console.log(e.stack);
+        process.exit();
+    }
 }
 
-server.on('published', function(packet, client) {
-  console.log('Published', packet.payload);
-});
+client.on("connect", doStuff);
