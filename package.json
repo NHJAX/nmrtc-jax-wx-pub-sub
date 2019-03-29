@@ -17,7 +17,6 @@
   },
   "homepage": "https://github.com/NHJAX/nmrtc-jax-wx-pub-sub#readme",
   "dependencies": {
-    "mosca": "^2.8.3",
-    "mqtt-server": "^0.1.0"
+
   }
 }
