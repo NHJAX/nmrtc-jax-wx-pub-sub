@@ -2,6 +2,7 @@ var mosca = require('mosca');
 var settings = {
 		port:1883
   };
+
 var mqtt = require('mqtt');
 var client  = mqtt.connect('mqtt://192.168.1.163');//IP off the machine which the server is hosted
 
@@ -9,7 +10,7 @@ var client  = mqtt.connect('mqtt://192.168.1.163');//IP off the machine which th
 var server = new mosca.Server(settings);
 
 //Server Init
-server.on('Server ready', function(){
+server.on('ready', function(){
 });
 
 //MQTT Message handler
