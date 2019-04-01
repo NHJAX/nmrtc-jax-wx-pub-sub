@@ -23,10 +23,11 @@ client.on('connect', function () {
     console.log("All clients subscribed and O N L I N E");
 });
 
+//MQTT Processor
 client.on('message', function (topic, message) {
-m = message.toString();
-t = topic.toString();
-console.log(t, m);
-s = (t + m);
-console.log(s);
+m = message.toString(); //Message string converted to string
+t = topic.toString(); //Topic string converted to string
+console.log(t, m); //Debug Printed
+s = (t + m); //Beta combine message and topic
+console.log(JSON.stringify(s));
 });
