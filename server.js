@@ -25,9 +25,7 @@ client.on('connect', function () {
 
 //MQTT Processor
 client.on('message', function (topic, message) {
-m = message.toString(); //Message string converted to string
-t = topic.toString(); //Topic string converted to string
-console.log(t, m); //Debug Printed
-s = (t + m); //Beta combine message and topic
-console.log(JSON.stringify(s));
+  t = topic.toString(); //Topic string converted
+  m = message.toString(); //Message string converted to string
+  console.log(t, m);
 });
