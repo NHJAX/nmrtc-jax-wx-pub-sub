@@ -13,12 +13,6 @@ var server = new mosca.Server(settings);
 server.on('ready', function(){
 });
 
-//MQTT Message handler
-client.on('connect', function () {
-    client.subscribe('WX')
-    console.log("Client has been detected");
-});
-
 client.on('message', function (topic, message) {
 m = message.toString();
 t = topic.toString();
