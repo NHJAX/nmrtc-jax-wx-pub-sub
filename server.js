@@ -11,6 +11,7 @@ var server = new mosca.Server(settings);
 
 //Server Init
 server.on('ready', function(){
+  console.log("SKYNET O N L I N E")
 });
 
 //MQTT Message handler
