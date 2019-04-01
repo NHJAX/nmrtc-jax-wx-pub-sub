@@ -14,8 +14,8 @@ server.on('ready', function(){
 });
 
 //MQTT Message handler
-client.on('connect', function (topic) {
-    client.subscribe(topic)
+client.on('connect', function () {
+    client.subscribe()
     console.log("Client has been detected");
 });
 
