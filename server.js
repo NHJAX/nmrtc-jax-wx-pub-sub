@@ -20,6 +20,7 @@ client.on('connect', function () {
 });
 
 client.on('message', function (topic, message) {
-context = message.toString();
-console.log(context)
+m = message.toString();
+t = topic.toString();
+console.log(topic, context)
 });
