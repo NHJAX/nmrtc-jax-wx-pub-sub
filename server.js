@@ -5,11 +5,14 @@ var settings = {
 var mqtt = require('mqtt');
 var client  = mqtt.connect('mqtt://10.0.0.205');//IP off the machine which the server is hosted
 
-var server = new mosca.Server('Server setting up', settings);
+//Server Setup
+var server = new mosca.Server(settings);
 
+//Server Init
 server.on('Server ready', function(){
 });
 
+//MQTT Message handler
 client.on('connect', function () {
     client.subscribe('WX')
     console.log("Client has been detected");
