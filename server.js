@@ -22,5 +22,5 @@ client.on('connect', function () {
 client.on('message', function (topic, message) {
 m = message.toString();
 t = topic.toString();
-console.log(topic, context)
+console.log(t, m);
 });
