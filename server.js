@@ -28,5 +28,5 @@ client.on('connect', function () {
 client.on('message', function (topic, message) {
   t = topic.toString(); //Topic string converted
   m = message.toString(); //Message string converted to string
-  console.log(t, m);
+  console.log(m);
 });
