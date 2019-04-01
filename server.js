@@ -15,7 +15,7 @@ server.on('ready', function(){
 
 //MQTT Message handler
 client.on('connect', function () {
-    client.subscribe()
+    client.subscribe('jax')
     console.log("Client has been detected");
 });
 
