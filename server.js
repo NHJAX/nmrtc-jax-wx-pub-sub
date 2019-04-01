@@ -17,14 +17,6 @@ server.on('ready', function(){
 client.on('connect', function () {
     client.subscribe('jax')
     console.log("JAX client has been detected");
-    client.subscribe('mayport')
-    console.log("Mayport client has been detected");
-    client.subscribe('keywest')
-    console.log("Keywest client has been detected");
-    client.subscribe('kingsbay')
-    console.log("Kingsbay client has been detected");
-    client.subscribe('albany')
-    console.log("Albany client has been detected");
 });
 
 client.on('message', function (topic, message) {
