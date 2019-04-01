@@ -4,7 +4,7 @@ var settings = {
   };
 
 var mqtt = require('mqtt');
-var client  = mqtt.connect('mqtt://192.168.1.163');//IP off the machine which the server is hosted
+var client  = mqtt.connect('mqtt://192.168.1.163');//IP of the machine which the server is hosted
 
 //Server Setup
 var server = new mosca.Server(settings);
@@ -16,11 +16,11 @@ server.on('ready', function(){
 
 //MQTT Message handler
 client.on('connect', function () {
-    client.subscribe('jax')
-    client.subscribe('mayport')
-    client.subscribe('keywest')
-    client.subscribe('albany')
-    client.subscribe('kingsbay')
+    client.subscribe('jax') //MTF Jacksonville
+    client.subscribe('mayport') //MTF Mayport
+    client.subscribe('keywest') //MTF Keywest
+    client.subscribe('albany') //MTF Albany
+    client.subscribe('kingsbay') //MTF Kingsbay
     console.log("All clients subscribed and O N L I N E");
 });
 
