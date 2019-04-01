@@ -9,7 +9,7 @@ var client  = mqtt.connect('mqtt://10.0.0.205');//IP off the machine which the s
 var server = new mosca.Server(settings);
 
 //Server Init
-server.on('Server ready', function(){
+server.on('ready', function(){
 });
 
 //MQTT Message handler
