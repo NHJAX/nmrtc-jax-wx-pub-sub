@@ -4,7 +4,7 @@ var settings = {
   };
 
 var mqtt = require('mqtt');
-var client  = mqtt.connect('mqtt://192.168.1.163');//IP of the machine which the server is hosted
+var client  = mqtt.connect('mqtt://localhost');//IP of the machine which the server is hosted
 
 //Server Setup
 var server = new mosca.Server(settings);
